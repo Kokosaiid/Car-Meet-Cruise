@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Global Reset - Removes default browser padding, margin, and sets box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+/* || VARIABLES - Defines reusable variables */
+:root {
+  /* FONT */
+  --FF-HEADINGS: "Montserrat", cursive;
+  --FF: "Nunito", cursive;
+  --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+  /* COLOR */
+  --DARK-COLOR: #000;
+  --DARKCHARCOL-COLOR: #333;
+  --LIGHT-COLOR: #fff;
+
+  /* BORDERS */
+  --BORDER-RADIUS: 15px;
+  --BORDERS: 1px solid var(--DARKCHARCOL-COLOR);
+
+  /* STANDARD PADDING */
+  --PADDING-TP: 0.25em; /* padding top bottom */
+  --PADDING-SIDE: 2.5%; /* padding left right */
+
+  /* STANDARD MARGIN */
+  --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+}
+
+/* || UTILITY CLASSES */
+
+.nowrap {
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+/* || GENERAL STYLES */
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--FS);
+  font-family: var(--FF);
+}
+
+body {
+  background-color: var(--LIGHT-COLOR);
+  color: var(--DARK-COLOR);
+}
+
+h1,
+h2 {
+  font-family: var(--FF-HEADINGS);
+  letter-spacing: 0.1em;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a:any-link {
+  color: var(--LIGHT-COLOR);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--DARKCHARCOL-COLOR);
+}
+
+/* || HEADER */
+
+.top_layer {
+  background-color: var(--DARK-COLOR);
+  padding: var(--PADDING-TP) var(--PADDING-SIDE);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 6px 5px -5px var(--LIGHT-COLOR); /* X Y blur */
+}
+
+.header__h1 {
+  text-align: left;
+  background-color: var(--DARK-COLOR);
+  color: var(--LIGHT-COLOR);
+  padding: var(--PADDING-TP);
+  font-size: 175%;
+  margin: 0;
+}
+
+.header__nav {
+  background-color: var(--DARK-COLOR);
+  font-weight: bold;
+  padding: 0;
+}
+
+.header__ul {
+  padding: var(--PADDING-TP) var(--PADDING-SIDE);
+  list-style-type: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem; /* Adds spacing between list items */
+  font-size: larger;
+}
+
+/* || HERO */
+
+.hero {
+  position: relative;
+}
+
+.hero__h2 {
+  background-color: var(--DARK-COLOR);
+  color: var(--LIGHT-COLOR);
+  padding: 0.25em 0.5em;
+  letter-spacing: 0.25rem;
+  text-shadow: 2px 2px 5px var(--DARKCHARCOL-COLOR);
+  position: absolute;
+  top: -150px;
+  left: 20px;
+  animation: showWelcome 0.5s ease-in-out 1s forwards; /* Applies an animation with a delay and smooth transition */
+}
+
+@keyframes showWelcome {
+  0% {
+    top: -20px;
+    transform: skew(0deg, -5deg) scaleY(0); /* No skew on the X-axis, slight slant (-5 degrees) on the Y-axis */
+    /* The element is scaled down to zero height (invisible) */
+  }
+
+  80% {
+    top: 30px;
+    transform: skew(10deg, -5deg) scaleY(1.2); /* Tilts 10 degrees on the X-axis, keeps the same -5 degree slant on Y-axis */
+    /* Scales taller (1.2 times its original height) for a dynamic effect */
+  }
+
+  100% {
+    top: 20px;
+    transform: skew(-10deg, -5deg) scaleY(1); /* Tilts -10 degrees in the opposite direction on the X-axis, maintains the -5 degree slant on the Y-axis */
+    /* Returns to its normal height (scaleY(1)) */
+  }
+}
+
+/* || MAIN */
+
+.main {
+  padding: var(--PADDING-TP) var(--PADDING-SIDE);
+  margin: var(--MARGIN);
+}
+
+.main__p {
+  font-size: 150%;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Call-to-Action (CTA) Button */
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 20px 24px;
+  margin: var(--MARGIN);
+  background-color: var(--DARK-COLOR);
+  color: var(--LIGHT-COLOR);
+  font-weight: bold;
+  font-size: 125%;
+  border-radius: var(--BORDER-RADIUS);
+  text-align: center;
+}
+
+/* || FOOTER */
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  background-color: var(--DARK-COLOR);
+  color: var(--LIGHT-COLOR);
+  padding: var(--PADDING-TP) var(--PADDING-SIDE);
+  text-align: center;
+}
+
+/* ||ABOUT */
+
+.section__about {
+  display: flex;
+  height: 100vh;
+  flex-direction: row-reverse;
+}
+
+.section__about figure {
+  flex: 1; /* Takes 50% of the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the space */
+}
+
+.main__about {
+  flex: 1; /* Takes 50% of the width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  text-align: center;
+}
+
+.main__h2-about {
+  font-size: xx-large;
+}
+
+.main__p-about {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+/* ||GALLERY */
+
+.main__h2-gallery {
+  text-align: center;
+  padding: var(--PADDING-TP) var(--PADDING-SIDE);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 200%;
+}
+
+.main__figure-gallery {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.main__figure-gallery img,
+.main__figure-gallery video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.main__figcap-gallery {
+  padding: var(--PADDING-TP) var(--PADDING-SIDE);
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+/* ||CONTACT */
+
+.contact__h2 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.contact__fieldset {
+  border: 1px solid var(--DARK-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  background-color: var(--DARKCHARCOL-COLOR);
+  padding: 2em;
+  width: 60%;
+  margin: 0 auto; /* Centers the fieldset horizontally */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact__p {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 1.1em;
+  color: var(--LIGHT-COLOR);
+}
+
+.contact__label {
+  display: block;
+  font-weight: bold;
+  margin: 0.5em 0 0.2em 5px; /* top right bottom left */
+}
+
+.contact__input,
+.contact__textarea {
+  display: block;
+  margin: 0 auto;
+  padding: 0.8em;
+  border-radius: var(--BORDER-RADIUS);
+  border: 2px solid var(--DARK-COLOR);
+  width: 80%;
+  font-size: 1em;
+  background-color: var(--LIGHT-COLOR);
+  color: var(--LIGHT-COLOR);
+}
+
+.contact__button {
+  display: block;
+  margin: 1.5em auto;
+  padding: 0.8em 2em;
+  background-color: var(--DARK-COLOR);
+  color: var(--LIGHT-COLOR);
+  border: none;
+  border-radius: var(--BORDER-RADIUS);
+  font-size: 1em;
+  font-weight: bold;
+}

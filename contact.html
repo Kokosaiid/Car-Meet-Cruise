@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Car Meet & Cruise</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="top_layer">
+      <header class="header">
+        <h1 class="header__h1">Contact Us</h1>
+        <nav class="header__nav">
+          <ul class="header__ul">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <section>
+      <figure>
+        <a href="#contact-form">
+          <video
+            loop=""
+            autoplay=""
+            src="images/Car_meet-video-960x540px.mp4"
+            width="100%"
+          ></video>
+        </a>
+      </figure>
+    </section>
+
+    <main class="main">
+      <form id="contact-form">
+        <fieldset class="contact__fieldset">
+          <p class="contact__p">
+            <label class="contact__label" for="name">Full Name:</label>
+            <input
+              class="contact__input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Type your name"
+              required
+            />
+          </p>
+          <p class="contact__p">
+            <label class="contact__label" for="email">Email:</label>
+            <input
+              class="contact__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@gmail.com"
+              required
+            />
+          </p>
+          <p class="contact__p">
+            <label class="contact__label" for="message">Message:</label>
+            <textarea
+              class="contact__textarea"
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Type your message here"
+            ></textarea>
+          </p>
+          <button class="contact__button" type="submit">Send</button>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <p>
+        <span class="nowrap">Copyright &copy; 2025 </span>
+        <span class="nowrap">Car Meet & Cruise</span>
+      </p>
+    </footer>
+  </body>
+</html>
