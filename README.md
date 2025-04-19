@@ -1,1 +1,2 @@
 # Car-Meet-Cruise
+This is a mini project I developed as part of a university assignment, where the objective was to create a visually engaging event webpage using only HTML and CSS—no JavaScript or frameworks allowed. The theme I chose is Car Meet & Cruise, an event page that showcases a gathering of car enthusiasts, complete with event details, a featured car section, and a sleek layout designed purely with front-end fundamentals. It was a fun challenge that helped me sharpen my skills in responsive design and semantic HTML structure.
